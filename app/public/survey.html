@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Friend Finder - Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+    <div id="surveyWrap">
+
+        <div class="" id="infoForm">
+            <h2 id="surveyTitle">Friend Finder!</h2>
+            <hr>
+            <p>Lets get started! First we need to collect some information</p>
+            <form role="form" class="">
+                <div class="infoFormGroup">
+                    <span class="inputSpan">
+                        <label for="user-name">Name(required):</label>
+                    </span>
+                    <input type="text" class="formStyle" id="user-name" value="">
+                </div>
+                <div class="infoFormGroup">
+                    <span class="inputSpan">
+                        <label for="user-picture">Image link(required):</label>
+                    </span>
+                    <input type="text" class="formStyle" id="user-picture" value="">
+                </div>
+                <button type="button" class="button" id="infoButton">Next</button>
+            </form>
+        </div>
+        
+        <div id="questions" class="hide">
+            <h2 id="surveyTitle">Friend Finder!</h2>
+            <p>Using the dropdown boxes, relate each statement to you on a scale of 1(strongly disagree) to 5(strongly
+                agree)</p>
+            <form role="form">
+                <div class="formGroup">
+                    <h2><strong>Question 1</strong></h2>
+                    <h3>You often find yourself lost in a day-dream.</h3>
+                    <select class="dropbox" id="q1">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 2</strong></h2>
+                    <h3>You sometimes let your room get messy.</h3>
+                    <select class="dropbox" id="q2">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 3</strong></h2>
+                    <h3>You try to spend as much time as you can outside.</h3>
+                    <select class="dropbox" id="q3">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 4</strong></h2>
+                    <h3>You have many unfinished projects.</h3>
+                    <select class="dropbox" id="q4">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 5</strong></h2>
+                    <h3>in a discussion, the truth should be more important than people's sensitivites.</h3>
+                    <select class="dropbox" id="q5">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 6</strong></h2>
+                    <h3>You think that everyone’s views should be respected regardless of whether they are supported by
+                        facts or not.</h3>
+                    <select class="dropbox" id="q6">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 7</strong></h2>
+                    <h3>You perform best under pressure.</h3>
+                    <select class="dropbox" id="q7">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 8</strong></h2>
+                    <h3>You enjoy a good argument/debate.</h3>
+                    <select class="dropbox" id="q8">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 9</strong></h2>
+                    <h3>You prefer a night in with friends more than a night out.</h3>
+                    <select class="dropbox" id="q9">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <div class="formGroup">
+                    <h2><strong>Question 10</strong></h2>
+                    <h3>You go out of your way to meet new people.</h3>
+                    <select class="dropbox" id="q10">
+                        <option value="0">Select an option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                    
+                </div>
+                <button type="submit" class="button" id="surveyButton">Submit!</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+var errorPosted = false;
+
+$('#infoButton').on("click", function(){
+    
+    if($('#user-name').val().trim() == "" || $('#user-picture').val().trim() == ""){   
+        if (errorPosted == false){
+            var errMSG = $('<p class="red">Please fill out all required fields</p>');
+            $('#infoForm').append(errMSG);
+            errorPosted = true;
+        }
+    }else{
+        $('#infoForm').attr("class", "hide");
+        $('#questions').attr("class", "show gb");  
+        errorPosted = false;
+    }
+    
+})
+$('#surveyButton').on("click", function(){
+    event.preventDefault();
+   
+    if(
+        $("#q1").val() == 0 || 
+        $("#q2").val() == 0 || 
+        $("#q3").val() == 0 || 
+        $("#q4").val() == 0 || 
+        $("#q5").val() == 0 || 
+        $("#q6").val() == 0 || 
+        $("#q7").val() == 0 || 
+        $("#q8").val() == 0 || 
+        $("#q9").val() == 0 || 
+        $("#q10").val() == 0
+    ){
+        if (errorPosted == false){
+            var errMSG = $('<p class="red">Please fill out all required fields</p>');
+            $('#questions').append(errMSG);
+            errorPosted = true;
+        console.log("working");
+        }
+    }else{
+        var userData = {
+            name: $('#user-name').val().trim(),
+            image:  $('#user-picture').val().trim(),
+            survey: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+            ]
+        };
+        console.log(userData);
+    }
+})
+</script>
