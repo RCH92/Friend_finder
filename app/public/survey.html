@@ -13,7 +13,11 @@
 
 <body>
     <div id="surveyWrap">
-
+        <div class="hide" id="matchDiv">
+            <h1 style="padding: 0px;">Complete!</h1>
+            <h2 id="matchName"></h2>
+            <img src="" id="matchimg" width="250" height="250" style="margin: auto; margin-bottom: 20px;">
+        </div>
         <div class="" id="infoForm">
             <h2 id="surveyTitle">Friend Finder!</h2>
             <hr>
@@ -182,6 +186,7 @@ $('#infoButton').on("click", function(){
             errorPosted = true;
         }
     }else{
+        $(window).scrollTop(0);
         $('#infoForm').attr("class", "hide");
         $('#questions').attr("class", "show gb");  
         errorPosted = false;
@@ -210,6 +215,7 @@ $('#surveyButton').on("click", function(){
         console.log("working");
         }
     }else{
+        $('#questions').attr("class", "hide gb");
         var userData = {
             name: $('#user-name').val().trim(),
             image:  $('#user-picture').val().trim(),
@@ -227,8 +233,34 @@ $('#surveyButton').on("click", function(){
             ]
         };
         $.post("/api/friends", userData, function(data){
+            $(window).scrollTop(0);
             console.log(data);
+            var diff = 100;
+            var poi = {};
+            if(data.length < 1){
+                $('#matchDiv').attr("class", "show gb");
+                $('#matchName').html(`You were the first person to complete the survey! heres a pic of spongebob`);
+                $('#matchimg').attr("src", "https://vignette.wikia.nocookie.net/lostmedia/images/6/60/Spongebill.png/revision/latest?cb=20160220075815");
+            }else{
+            for(var i=0; i<(data.length -1); i++){
+                var currentDiff = 0;
+               for(var x=0; x<10;x++){
+                currentDiff += Math.abs(data[i].survey[x] - userData.survey[x]);
+               } 
+               console.log(currentDiff);
+               if(currentDiff < diff){
+                   diff = currentDiff;
+                   poi = data[i];
+               }
+            }
+            console.log(poi);
+            $('#matchDiv').attr("class", "show gb");
+            $('#matchName').html(`You matched with ${poi.name}!`);
+            $('#matchimg').attr("src", poi.image);
+            }
         });
+
     }
+
 })
 </script>
